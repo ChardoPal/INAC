@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes INAC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .container{
+            padding: 20px;
+        }
+        .slider-wrapper{
+            position: relative;
+            /*min-width: 786px;*/
+            margin: 0 auto;
+        }
+        .slider{
+            display: flex;
+            aspect-ratio: 16/9;
+            overflow-x: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0px 5px 20px 8px hsl(357deg 17.35% 71.6% / 67%);
+            border-radius: 10px;
+        }
+
+        .image{
+            flex: 1 0 100%; 
+        }
+
+        .slider-nav{
+            display: flex;
+            column-gap: 16px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            translate: translateX(-50%);
+            z-index: 1;
+        }
+
+        .slider-button{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #756e6e;
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+        }
+
+        .slider-button:hover{
+            opacity: 1;
+        }
+
+        .texto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(44, 44, 44); 
+            font-size: 24px; 
+            text-align: center; 
+        }
+
+        .slider-button1028 {
+            width: 40px;
+            height: 40px;
+            border-radius: 0px 10px 10px 0px;
+            background-color: rgba(117, 110, 110, 0.75);
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-button1029 {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px 0px 0px 10px;
+            background-color: rgba(117, 110, 110, 0.75);
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition:all 0.3s ease;
+        }
+
+        .slider-button1029:hover {
+            background-color: rgb(21, 95, 180);
+        }
+
+        .slider-button1029:nth-child(1) {
+            margin-left: 20px;
+        }
+
+        .slider-button1029:nth-child(3) {
+            margin-right: 20px;
+        }
+
+        
+        .slider-button1028:hover {
+            background-color: rgb(21, 95, 180);
+        }
+
+        .slider-button1028:active {
+            background-color: rgb(7, 56, 112);
+        }
+
+        .slider-button1029:active {
+            background-color: rgb(7, 56, 112);
+        }
+
+        .slider-button1028:nth-child(3) {
+            margin-right: 20px;
+        }
+
+        .slider-nav2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slider-1" class="image" src="https://img.freepik.com/foto-gratis/puesta-sol-siluetas-arboles-montanas-ia-generativa_169016-29371.jpg?w=826&t=st=1714776904~exp=1714777504~hmac=1d0bae555ff3fc8b35635957b2931780c091c0396839b21dcda8758ea679d742" alt="img1" srcset="https://img.freepik.com/foto-gratis/puesta-sol-siluetas-arboles-montanas-ia-generativa_169016-29371.jpg?w=826&t=st=1714776904~exp=1714777504~hmac=1d0bae555ff3fc8b35635957b2931780c091c0396839b21dcda8758ea679d742">
+                <!--<div class="texto">Bienvenidos</div>-->
+                <img id="slider-2" class="image" src="https://img.freepik.com/foto-gratis/fondo-pantalla-luna-arte-digital_23-2150918875.jpg?w=826&t=st=1714776996~exp=1714777596~hmac=d597dfbeac44eaf6117db2023559435310d7525e00968e23364aab947bd2a5ea" alt="img2">
+                <img id="slider-3" class="image" src="https://img.freepik.com/foto-gratis/fondo-abstracto-rojo-azul-burbujas_23-2147876086.jpg?w=740&t=st=1714777028~exp=1714777628~hmac=e8f902ffe77d0cf8df012ccc7a2ba14763e5531f35194f69daac0201d87e087f" alt="img3">
+                <img id="slider-4" class="image" src="https://img.freepik.com/vector-gratis/fondo-hojas-tropicales-zoom_23-2148580778.jpg?w=740&t=st=1714777100~exp=1714777700~hmac=4877281d0674fc9bf3a200f84f3b7369b976f81e110b04250fcc3ae98f353702" alt="img4" >
+            </div>
+            <div class="slider-nav2">
+                <button onclick="prevSlide()" class="slider-button1028"><i class="fa-solid fa-circle-left"></i></button>
+                <button onclick="nextSlide()" class="slider-button1029"><i class="fa-solid fa-circle-right"></i></button>
+            </div>
+            <!--<div class="slider-nav">
+                <a href="#slider-1" class="slider-button"></a>
+                <a href="#slider-2" class="slider-button"></a>
+                <a href="#slider-3" class="slider-button"></a>
+                <a href="#slider-4" class="slider-button"></a>
+            </div>-->
+        </div>
+    </section>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slider .image');
+        const totalSlides = slides.length;
+        let autoSliderTimer; // Variable para el temporizador del slider automático
+    
+        function nextSlide() {
+            clearInterval(autoSliderTimer); // Limpiamos el temporizador al pasar manualmente
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+            resetAutoSliderTimer(); // Reiniciamos el temporizador del slider automático
+        }
+    
+        function prevSlide() {
+            clearInterval(autoSliderTimer); // Limpiamos el temporizador al pasar manualmente
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoSliderTimer(); // Reiniciamos el temporizador del slider automático
+        }
+    
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.style.transition = 'transform 0.4s ease'; // Añadido para la transición automática
+                slide.style.transform = `translateX(${-100 * currentIndex}%)`;
+            });
+        }
+    
+        function resetAutoSliderTimer() {
+            clearInterval(autoSliderTimer);
+            autoSliderTimer = setInterval(nextSlide, 6000);
+        }
+    
+        // Iniciar el temporizador del slider automático
+        resetAutoSliderTimer();
+    
+        // Reiniciar el temporizador del slider automático después de 3 segundos si no hay interacción
+        document.addEventListener('DOMContentLoaded', () => {
+            let interactionTimer;
+            document.querySelector('.slider-nav').addEventListener('mousedown', () => {
+                clearInterval(interactionTimer);
+                clearInterval(autoSliderTimer);
+            });
+            document.querySelector('.slider-nav').addEventListener('mouseup', () => {
+                interactionTimer = setTimeout(resetAutoSliderTimer, 3000);
+            });
+        });
+    </script>
+    
+</body>
+</html>
